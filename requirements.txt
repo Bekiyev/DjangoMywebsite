@@ -1,0 +1,9 @@
+Django==1.6.5
+South==1.0
+dj-static==0.0.5
+psycopg2==2.5.1
+static==0.4
+wsgiref==0.1.2
+dj-database-url==0.4.0
+gunicorn==19.4.5
+whitenoise==2.0.6

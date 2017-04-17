@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block style %}
+	<style>
+		body {
+			border-top: 4px solid #533312;
+			background: url('{% static 'img/codeback.JPG' %}') no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+		.jumbotron h1 {
+			font-weight: 100;
+		}
+
+		.jumbotron p {
+			font-weight: 100;
+			font-size: 30px;
+		}
+
+		.featured-row {
+			text-align: center; 
+			background-color: white; 
+			min-height: 300px;
+			padding-top: 40px;
+			border-bottom: 1px solid #EEE;
+		}
+
+	</style>
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+
+<div class="jumbotron" style='background-color:white;'>
+	<div class="container"> 
+		<div class='col-sm-6'>
+			<h1>Entreprenuer</h1>
+			<p>I wanted to make peoples life easier.<br/>It all started with an idea.  </p>
+			<p><a class="btn btn-default btn-lg btn-block" href="#signups" role="button">Be First &raquo;</a></p>
+		</div>
+		<div class = "col-sm-6">
+			<img src="{% static 'img/a1.JPG' %}" class = 'img-responsive'>
+		</div>
+	</div>
+</div>
+
+<div class = 'container' style='text-align:center; color:white;' id='signups'>
+	<div class='col-sm-6 col-sm-offset-3'>
+	<i class="fa fa-unlock fa-5x" style="color:#white;"></i>
+		<h1>Unlock First</h1>
+
+		<form class="form-horizontal" method = "POST" action = ""> {% csrf_token %}
+			<div class="form-group form-group-lg">
+				{% if form.email.errors %}
+					{% for err in form.email.errors %}
+						<div class="alert alert-danger" role = "alert"> {{ err }}</div>
+					{% endfor %}
+				{% endif %}
+
+				<div class="input-group">
+					<input class = 'form-control' type="email" name="email" placeholder="Your email...">
+					<span class="input-group-btn">
+						<input type='submit' value='Join' class='btn btn-primary btn-lg'>
+					</span>
+				</div>
+			</div>
+		</form>
+		<p class="lead">Sign up here. <br/> Get First News on Content <br/> Full Stack Developers</p>
+	</div>
+
+</div>
+
+
+
+
+
+
+<div class ='row featured-row'>
+	<div class='row featured-row'>
+		<div class='col-sm-12'>
+			<div class='col-sm-3'>
+				<i class="fa fa-truck fa-5x"></i>
+				<h2>AG Logistics</h2>
+				<p class='lead'>
+				Fastest, Cheapest &amp; More Safe 
+				</p>
+			</div>
+			<div class='col-sm-3'>
+				<i class="fa fa-shopping-cart fa-5x"></i>
+				<h2>TM Market</h2>
+				<p class='lead'>
+				Online Shopping Center
+				</p>
+			</div>
+			<div class='col-sm-3'>
+				<i class="fa fa-book fa-5x"></i>
+				<h2>TM Dictionary</h2>
+				<p class='lead'>
+				English - Turkmen Dictionary.
+				</p>
+			</div>
+			<div class='col-sm-3'>
+				<i class="fa fa-newspaper-o fa-5x"></i>
+				<h2>Turkmen Blog</h2>
+				<p class='lead'>
+				Turkmen News
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class ='row featured-row'>
+	<div class='row featured-row'>
+		<div class='col-sm-12'>
+			<div class='col-sm-3'>
+				<i class="fa fa-whatsapp fa-5x"></i>
+				<h2>Turkmen Chat</h2>
+				<p class='lead'>
+				Gatnashaly (Turkmen Chat).
+				</p>
+			</div>
+			<div class='col-sm-3'>
+				<i class="fa fa-handshake-o fa-5x"></i>
+				<h2>Offer Up</h2>
+				<p class='lead'>
+				Turkmen Bekif's list
+				</p>
+			</div>
+			<div class='col-sm-3'>
+				<i class="fa fa-play-circle-o fa-5x"></i>
+				<i class="fa fa-pause-circle-o fa-5x"></i>
+				<h2>Turkmen Owazy</h2>
+				<p class='lead'>
+				New Turkmen Songs.
+				</p>
+			</div>
+			<div class='col-sm-3'>
+				<i class="fa fa-film fa-5x"></i>
+				<h2>Movie Trailers</h2>
+				<p class='lead'>
+				Current Movie Trailers.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
