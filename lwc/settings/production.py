@@ -17,4 +17,4 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 
-SHARE_URL = "http://ancient-castle-2299.herokuapp.com/?ref="
+SHARE_URL = "http://bekif.com/?ref="
